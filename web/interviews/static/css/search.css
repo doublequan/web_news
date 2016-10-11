@@ -93,7 +93,8 @@ a:link {
 /* navbar css */
 
 .navbar {
-    background-color: #0767c8;
+    background-color: #0D3349;
+    /*background-color: #0767c8;*/
     border-color: #0767c8;
 }
 
@@ -114,7 +115,7 @@ a:link {
 
 .navbar-inverse .navbar-brand {
     color: #ffffff;
-    font-size: 30px;
+    font-size: 20px;
 }
 
 .container .navbar-header {

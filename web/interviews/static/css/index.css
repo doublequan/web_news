@@ -13,6 +13,7 @@ body {
     background-color: #0767c8;
     color: #fff;
     margin-bottom: 0;
+    padding-top: 100px;
 }
 
 .site-nav {
@@ -37,7 +38,7 @@ body {
 }
 
 .site-header span {
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .site-header .form-group {
