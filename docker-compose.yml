@@ -6,7 +6,7 @@ volumes:
 
 services:
   db:
-    image: postgres
+    image: postgres:9.5
     volumes:  
       - data:/var/lib/postgresql/data
     ports:
@@ -34,13 +34,13 @@ services:
     depends_on:
       - db
     container_name: scrapy_repeat
-  scrapy_all:
-    image: billdqu/web_django
-    command: ./scrapy_all.sh
-    volumes:
-      - ./web/web_scrapy:/code
-    depends_on:
-      - db
-    container_name: scrapy_all
+#  scrapy_all:
+#    image: billdqu/web_django
+#    command: ./scrapy_all.sh
+#    volumes:
+#      - ./web/web_scrapy:/code
+#    depends_on:
+#      - db
+#    container_name: scrapy_all
 
 
