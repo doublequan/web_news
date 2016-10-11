@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>面经搜索</title>
+    <title>News Center</title>
     <meta name="description" content="">
     <meta name="keywords" content="">
     <meta name="author" content="">
@@ -33,16 +33,17 @@
 
 <body>
 
-    <header class="site-header jumbotron">
+    <!--<header class="site-header jumbotron" style="background-image: url(http://static.bootcss.com/expo/img/d/dd/2de797545de56274f03a5920eb3a1.jpg)">-->
+    <header class="site-header jumbotron" style="background-image: url({% static 'img/post-bg-web.jpg' %})">
         <div class="site-nav">
             <a href="#about">About</a>
         </div>
         <div class="container">
             <div class="row">
                 <div class="col-xs-12">
-                    <h1>面 经 搜 索</h1>
-                    <p>北美 IT 岗位面试经验搜索<br>
-                        <span class="package-amount">已收录了 <strong>{{ total_num }}</strong> 个面经</span>
+                    <h1>News Search</h1>
+                    <p><br>
+                        <span class="package-amount">Collected <strong>{{ total_num }}</strong> News</span>
                     </p>
                     <form id="form-search" role="search" method="get" action="{% url 'interviews:search'%}">
                         <div class="form-group">
@@ -60,7 +61,7 @@
 
             <div class="board col-xs-12 col-md-12 col-lg-6">
                 <div class="board-header">
-                    <span>最新面经</span>
+                    <span>Newest</span>
                     <a href="{% url 'interviews:search'%}">More</a>
                 </div>
 
@@ -105,7 +106,7 @@
         <div class="footer-about " id="about">
             <h4>关于 本网站</h4>
             <p>本网站尚在开发中</p>
-            <p>有任何建议欢迎反馈到邮件：###@###.com</p>
+            <p>有任何建议欢迎反馈到邮件：billdqu@gmail.com</p>
         </div>
     </footer>
 

@@ -34,6 +34,9 @@ TAGS = {
     'Resume': ('resume', '简历'),
     'OA': ('oa', '在线测试'),
     'Intern': ('intern', 'internship', '实习'),
+    'Reddit': ('reddit',),
+    'wdxtub': ('wdxtub', 'wdxtub.com'),
+    'CMU': ('cmu', '卡内基梅陇', 'carnegie mellon', 'carnegie mellon university')
 }
 
 def index(request):
@@ -44,15 +47,13 @@ def index(request):
                       for models in content_newest_models]
 
 
-    board_names = ("Google",
-                   "Amazon",
-                   "Facebook",
-                   "Linkedin",
-                   "Uber",
-                   "Microsoft",
-                   # "Airbnb",
-                   "Onsite",
-                   "Intern")
+    board_names = ("wdxtub",
+                   "NBA",
+                   "Tech",
+                   "Reddit",
+                   "CMU",
+                   "Internet",
+                   )
 
     boards = []
     for board_name in board_names:

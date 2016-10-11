@@ -56,10 +56,10 @@ COOKIES_ENABLED = False
 DOWNLOADER_MIDDLEWARES = {
    # 'web_scrapy.middlewares.MyCustomDownloaderMiddleware': 543,
    'web_scrapy.rotate_useragent.RotateUserAgentMiddleware': 10,
-   'web_scrapy.rotate_useragent.ProxyMiddleware': 300,
+   # 'web_scrapy.rotate_useragent.ProxyMiddleware': 300,
    'scrapy.contrib.downloadermiddleware.useragent.UserAgentMiddleware': None,
    # 'scrapy.contrib.downloadermiddleware.httpproxy.HttpProxyMiddleware': 110,
-   "web_scrapy.google_cache.GoogleCacheMiddleware":5,
+   # "web_scrapy.google_cache.GoogleCacheMiddleware":5,
 }
 
 GOOGLE_CACHE_DOMAINS = {

@@ -16,7 +16,7 @@ class PutIntoDB(object):
 
     def process_item(self, item, spider):
         if self.check_duplication(item):
-            self.add_tags(item)
+            # self.add_tags(item)
             self.put_into_db(item)
 
         return item
