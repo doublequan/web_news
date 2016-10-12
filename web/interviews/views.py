@@ -52,7 +52,7 @@ def index(request):
                    "Tech",
                    "Reddit",
                    "CMU",
-                   "Internet",
+                   "Google",
                    )
 
     boards = []
