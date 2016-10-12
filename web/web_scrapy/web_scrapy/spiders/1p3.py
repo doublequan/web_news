@@ -87,7 +87,8 @@ class oneP3Spider(scrapy.Spider):
         item['source'] = "1point3acres"
         item['source_link'] = "http://www.1point3acres.com/bbs/forum-28-1.html"
         item['desc'] = desc
-        item['tag'] = ""
+        item['tag'] = "1p3"
+        self.add_tags(item=item)
         yield item
 
 
@@ -127,3 +128,45 @@ class oneP3Spider(scrapy.Spider):
                    r"|(')"
         desc = re.sub(pattern, "", desc)
         return desc
+
+    def add_tags(self, item):
+        '''
+
+        :param item:
+        :return:
+        '''
+        # All the contents will be in lowercase
+        TAGS = {
+            # Companies
+            'Google': ('google', 'googl', 'g家', '谷歌'),
+            'Amazon': ('amazon', 'a家', '亚麻', '亚马逊', '亚玛逊'),
+            'LinkedIn': ('linkedin', 'linkin', 'l家', '领英'),
+            'Facebook': ('fb', 'facebook', '脸书', 'f家'),
+            'Microsoft': ('microsoft', 'm家', '微软'),
+            'Airbnb': ('airbnb',),
+            'Uber': ('uber', '优步'),
+
+            # Other Keywords
+            'Onsite': ('onsite',),
+            'Resume': ('resume', '简历'),
+            'OA': ('oa', '在线测试'),
+            'Intern': ('intern', 'internship', '实习'),
+        }
+
+        tags = {}
+        for (key, values) in TAGS.items():
+            count_title = 0
+            count_desc = 0
+            for v in values:
+                count_title += item['title'].lower().count(v)
+                count_desc += item['desc'].lower().count(v)
+            score = count_title * 10 + count_desc * 2
+            if score > 0:
+                tags[key] = score
+        tags_sorted = sorted(tags.iteritems(), key=lambda d: d[1], reverse=True)
+        # print tags
+        tag_str = ""
+        for tag_tuple in tags_sorted:
+            tag_str += tag_tuple[0] + " "
+
+        item['tag'] = tag_str
