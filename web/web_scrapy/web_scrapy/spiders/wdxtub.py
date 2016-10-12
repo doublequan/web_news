@@ -18,8 +18,8 @@ class WdBlogSpider(scrapy.Spider):
     ]
 
     def __init__(self):
-        # for i in range(2, 61):
-        #     self.start_urls += ["http://wdxtub.com/page/%d/" % i]
+        for i in range(2, 61):
+            self.start_urls += ["http://wdxtub.com/page/%d/" % i]
 
         conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
         query_cu = conn.cursor()

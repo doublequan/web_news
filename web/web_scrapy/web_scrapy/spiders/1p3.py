@@ -21,6 +21,10 @@ class oneP3Spider(scrapy.Spider):
     ]
 
     def __init__(self):
+        for p in xrange(1, 20):
+            self.start_urls += ["http://www.1point3acres.com/bbs/forum-28-" + str(p) + ".html"]
+
+
         conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
         query_cu = conn.cursor()
         query_cu.execute('SELECT link FROM interviews_post')
