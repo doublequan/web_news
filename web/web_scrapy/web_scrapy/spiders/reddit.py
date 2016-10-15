@@ -20,7 +20,7 @@ class RedditSpider(scrapy.Spider):
         "https://www.reddit.com/r/news/",
         "https://www.reddit.com/r/cmu",
     ]
-    MAX_PAGE = 300
+    MAX_PAGE = 0
 
     def __init__(self):
         conn = psycopg2.connect(database="postgres", user="postgres", host="db", port="5432")
